@@ -7,8 +7,8 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const mongoClient = mongodb.MongoClient;
-// const dbUrl = process.env.DBURL || 'mongodb://127.0.0.1:27017';
-const dbUrl = 'mongodb://127.0.0.1:27017';
+const dbUrl = process.env.DBURL || 'mongodb://127.0.0.1:27017';
+// const dbUrl = 'mongodb://127.0.0.1:27017';
 const PORT = process.env.PORT || 3001;
 const database = 'Tasksubmit';
 const userCollection = 'Student';
