@@ -226,7 +226,7 @@ app.post("/addtask", [authenticate], async (req, res) => {
                 Link1: req.body.Link1,
                 Link2: req.body.Link2,
                 date: today,
-                time: new Date().toLocaleTimeString()
+                time: new Date().toLocaleTimeString('en-US')
             },
             {
                 Arr: "All Tasks",
@@ -237,7 +237,7 @@ app.post("/addtask", [authenticate], async (req, res) => {
                 Link1: req.body.Link1,
                 Link2: req.body.Link2,
                 date: today,
-                time: new Date().toLocaleTimeString()
+                time: new Date().toLocaleTimeString('en-US')
             }
         ])
         res.json({ message: "task added", add })
