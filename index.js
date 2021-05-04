@@ -226,7 +226,7 @@ app.post("/addtask", [authenticate], async (req, res) => {
                 Link1: req.body.Link1,
                 Link2: req.body.Link2,
                 date: today,
-                time: new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds()
+                time: new Date().toLocaleTimeString()
             },
             {
                 Arr: "All Tasks",
@@ -237,7 +237,7 @@ app.post("/addtask", [authenticate], async (req, res) => {
                 Link1: req.body.Link1,
                 Link2: req.body.Link2,
                 date: today,
-                time: new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds()
+                time: new Date().toLocaleTimeString()
             }
         ])
         res.json({ message: "task added", add })
@@ -323,7 +323,7 @@ app.post('/query', [authenticate], async (req, res) => {
                 Head: req.body.Head,
                 Body: req.body.Body,
                 date: today,
-                time: new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds()
+                time: new Date().toLocaleTimeString()
             })
             res.json({ message: "Your query has been submitted", query });
         }
@@ -408,7 +408,7 @@ app.post("/submit/:id", [authenticate], async (req, res) => {
                     Fname: req.body.auth.Firstname,
                     Lname: req.body.auth.Lastname,
                     date: today,
-                    time: new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds()
+                    time: new Date().toLocaleTimeString()
                 },
                 { // this is for submissoin of student
                     Data: req.body.auth.Email,
@@ -416,7 +416,7 @@ app.post("/submit/:id", [authenticate], async (req, res) => {
                     Title: data.Title,
                     Detail: data.Details,
                     date: today,
-                    time: new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds()
+                    time: new Date().toLocaleTimeString()
                 }
             ])
             // console.log(one)
